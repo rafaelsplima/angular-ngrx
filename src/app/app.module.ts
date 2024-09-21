@@ -7,12 +7,14 @@ import { ListarUsuariosComponent } from './componentes/listar-usuarios/listar-us
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CadastroUsuarioComponent } from './componentes/cadastro-usuario/cadastro-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarUsuariosComponent,
-    MainComponent
+    MainComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     BrowserModule,
