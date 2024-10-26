@@ -8,6 +8,10 @@ import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CadastroUsuarioComponent } from './componentes/cadastro-usuario/cadastro-usuario.component';
+import { StoreModule } from '@ngrx/store';
+import { appEffects, appReducer } from './store/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { CadastroUsuarioComponent } from './componentes/cadastro-usuario/cadastr
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot(appEffects),
+    StoreDevtoolsModule.instrument()
+
   ],
   providers: [],
   bootstrap: [AppComponent]
