@@ -1,4 +1,3 @@
-import { UsuariosState } from './usuarios.reducer';
 import { Action, createFeatureSelector, createReducer, createSelector, on } from "@ngrx/store";
 import { UsuarioModel } from "src/app/models/UsuarioModel";
 import * as fromUsuariosAction from "../usuarios/usuarios.actions"
