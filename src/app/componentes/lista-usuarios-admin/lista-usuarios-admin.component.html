@@ -1,0 +1,43 @@
+<div class="content">
+  <br />
+  <h4> Usuarios com perfil Admin: </h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <td> Id </td>
+        <td> Nome </td>
+        <td> Idade </td>
+        <td> Perfil </td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of listaUsuarios$ | async">
+          <td>{{row.id}} </td>
+          <td>{{row.idade}}</td>
+          <td>{{row.nome}} </td>
+          <td>{{row.perfil}} </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+  <h4> Usuarios com perfil Parâmetro: </h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <td> Id </td>
+        <td> Nome </td>
+        <td> Idade </td>
+        <td> Perfil </td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of listaUsuariosByPerfil$ | async">
+          <td>{{row.id}} </td>
+          <td>{{row.idade}}</td>
+          <td>{{row.nome}} </td>
+          <td>{{row.perfil}} </td>
+        </tr>
+    </tbody>
+  </table>
+</div>

@@ -8,17 +8,20 @@ import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CadastroUsuarioComponent } from './componentes/cadastro-usuario/cadastro-usuario.component';
+import { ListaUsuariosAdminComponent } from './componentes/lista-usuarios-admin/lista-usuarios-admin.component';
 import { StoreModule } from '@ngrx/store';
 import { appEffects, appReducer } from './store/app.state';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarUsuariosComponent,
     MainComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
+    ListaUsuariosAdminComponent
   ],
   imports: [
     BrowserModule,

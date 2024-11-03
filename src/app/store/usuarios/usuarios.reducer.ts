@@ -78,3 +78,8 @@ export const getUsuariosIdadeMaiorQue50 = createSelector(
   getUsuariosFeatureState,
   (state: UsuariosState) => state.usuarios.filter((filter) => filter.idade >= 50)
 );
+
+export const getUsuarioByPerfil = createSelector(
+  getUsuariosFeatureState,
+  (state: UsuariosState, props:{perfil: string}) => state.usuarios.filter((filter) => filter.perfil == props.perfil)
+);
