@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class UsuarioService {
 
-  private readonly URL = 'http://localhost:3000/usuarios';
+  private readonly URL = 'http://localhost:3000/usuarios/';
   headers = new HttpHeaders();
 
   constructor(private htpp: HttpClient) {
@@ -19,7 +19,7 @@ export class UsuarioService {
   }
 
   getUsuario(id: number){
-    return this.htpp.get<UsuarioModel>(`this.URL${id}`);
+    return this.htpp.get<UsuarioModel>(`${this.URL}${id}`);
   }
 
   addUsuario(usuario: UsuarioModel){
@@ -27,11 +27,11 @@ export class UsuarioService {
   }
 
   updateUsuario(usuario: UsuarioModel){
-    return this.htpp.post<UsuarioModel>(`this.URL${usuario.id}`,JSON.stringify(usuario), {headers: this.headers});
+    return this.htpp.post<UsuarioModel>(`${this.URL}${usuario.id}`,JSON.stringify(usuario), {headers: this.headers});
   }
 
   deleteUsuario(id: number){
-    return this.htpp.delete<UsuarioModel>(`this.URL${id}`, {headers: this.headers})
+    return this.htpp.delete<UsuarioModel>(`${this.URL}${id}`, {headers: this.headers})
   }
 
 }

@@ -15,8 +15,54 @@
           <td>{{row.idade}}</td>
           <td>{{row.nome}} </td>
           <td>{{row.perfil}} </td>
-          <td> <button class="btn btn-primary"> Editar </button> </td>
+          <td>
+            <button class="btn btn-primary"  data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    (click)="editar(row.id)">
+                    Editar
+            </button>
+            <button class="btn btn-secondary"
+                    (click)="excluir(row.id)">
+                    Excluir
+            </button>
+          </td>
         </tr>
     </tbody>
   </table>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar: </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" *ngIf="(usuario$) | async as usuario">
+        <form id="myForm" #f="ngForm">
+          <div class="col-6">
+            <label>Id</label>
+            <input class="form-control" type="text" id="id" name="id" [(ngModel)]="usuario.id" />
+          </div>
+          <div class="col-6">
+            <label>Nome </label>
+            <input class="form-control" type="text" id="nome" name="nome" [(ngModel)] ="usuario.nome" />
+          </div>
+          <div class="col-6">
+            <label> Idade </label>
+            <input class="form-control" type="text" id="idade" name="idade" [(ngModel)] ="usuario.idade" />
+          </div>
+          <div class="col-6">
+            <label> Perfil </label>
+            <input class="form-control" type="text" id="perfil" name="perfil" [(ngModel)]="usuario.perfil" />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
